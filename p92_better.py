@@ -5,5 +5,10 @@ data.sort()  # 오름차순 정렬
 max_value = data[n - 1]  # 가장 큰 수
 second_max_value = data[n - 2]  # 가장 작은 수
 
-Sum = ((m / (k + 1)) * (k * max_value + second_max_value)) + ((m % (k + 1)) * max_value)
+count = int(m / (k + 1)) * k
+count += m % (k + 1)
+
+Sum = 0
+Sum += count * max_value
+Sum += (m - count) * second_max_value
 print(Sum)
